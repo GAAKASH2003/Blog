@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    {% block content %}
+    
+    <div class="container " style="display: flex; justify-content: center;width:700px;">
+      
+        <div class="container1" >
+            {% for post  in posts %}
+            <div class="row mt-2 pt-1">
+                <div class="card mb-1 shadow my-3 mx-5" style="max-width: 800px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{post.author.profilemodel.image.url}}" class="img-thumbnail" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <small>{{post.date_created}}</small>
+                                <hr>
+                                <a href="{% url 'post_detail' post.id %}" class="h3">{{post.title}}</a>
+                               
+                                <p class="text-justify my-3">{{post.content}}</p>
+                                <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        <!-- <div class="row mt-2 pt-1">
+            <div class="card mb-1 shadow my-3" style="max-width: 640px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <small>24th May 2023</small>
+                            <hr>
+                            <h3 class="text-danger">First Post</h3>
+                            <p class="text-justify my-3">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p> -->
+                            <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div> -->
+                        <!-- </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="row mt-2 pt-1">
+            <div class="card mb-1 shadow my-3" style="max-width: 640px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <small>24th May 2023</small>
+                            <hr>
+                            <h3 class="text-danger">First Post</h3>
+                            <p class="text-justify my-3">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p> -->
+                            <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div> -->
+                        <!-- </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 pt-1">
+            <div class="card mb-1 shadow my-3" style="max-width: 640px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <small>24th May 2023</small>
+                            <hr>
+                            <h3 class="text-danger">First Post</h3>
+                            <p class="text-justify my-3">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                            <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div> -->
+                        <!-- </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        
+        </div>
+    </div>        
+        {% endblock content %}
+
+</body>
+
+</html>

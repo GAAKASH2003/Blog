@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags%} 
+{% block content %}
+<!-- <div class="col-md-4 mx-4 my-4 ">
+    <div class="card mx-4 mt-4 shadow my-3">
+        <div class="card-body">
+            
+          <form  method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" class="btn btn-danger btn-block">
+          </form>
+        </div>
+    </div>
+</div> -->
+<h3 class="text-center my-3">Write a Blog</h3>
+<div class="container" style="width: 600px;height:500px;background-color: cyan;border-radius:20px;color:brown;justify-content: center;">
+   <div class="title" style="margin-top: 50px;">
+    <br>
+
+    <br>
+    <form  method="POST">
+    {% csrf_token %}
+    <h3>{{ form|crispy}}   </h3>
+    <input type="submit" value="POST" class="btn btn-danger btn-block">
+</form>
+
+    
+   </div>
+    </div>
+{% endblock content %}
+
+
+
+
+

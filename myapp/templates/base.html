@@ -1,0 +1,13 @@
+
+{% include 'nav.html' %}
+
+{% if request.user.is_authenticated %} 
+{% block title %}
+{% endblock title %}
+{% block content %}
+
+{% endblock content %}
+
+{% block menu %}
+{% endblock menu %}
+{% endif %}
